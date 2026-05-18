@@ -1,0 +1,24 @@
+site_name: My Docs
+docs_dir: 'md'
+site_dir: 'docs'
+theme:
+  name: material                 # pip install mkdocs-material
+  favicon: assets/favicon.ico
+nav:
+  - Introducció: index.md
+  - Instanciar: 02-Instanciar.md
+  - Encapsulació: 03-Encapsulacio.md
+  - Getter i Setter: 04-getter_setter.md
+  - Mètodes especials: 05-metodes_especials.md
+  - Composició: 06-composicio_objectes.md
+  - Herència simple: 07-herencia.md
+  - Herència múltiple: 08-herencia_multiple.md
+  - Mètodes estàtics i de classe: 09-metodes_estatics_classe.md
+  - Dataclasses: 10-dataclasses.md
+  - Principis SOLID: 11-solid.md
+markdown_extensions:
+  - pymdownx.superfences        # pip install pymdown-extensions
+extra_css:
+  - css/estils.css
+
+

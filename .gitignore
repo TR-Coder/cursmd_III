@@ -1,0 +1,15 @@
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# MkDocs
+site/
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
