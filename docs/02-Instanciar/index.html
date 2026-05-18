@@ -1,0 +1,998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../03-Encapsulacio/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Instanciar - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/estils.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#instanciar-objectes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instanciar
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducció
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instanciar
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instanciar
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#atributs-dinstancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributs d'instància
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructor-__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructor __init__()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacio-basica-al-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validació bàsica al constructor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributs-de-classe-i-dinstancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributs de classe i d'instància
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shadowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shadowing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-Encapsulacio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Encapsulació
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-getter_setter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getter i Setter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-metodes_especials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mètodes especials
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-composicio_objectes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composició
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-herencia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Herència simple
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08-herencia_multiple/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Herència múltiple
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-metodes_estatics_classe/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mètodes estàtics i de classe
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-dataclasses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dataclasses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11-solid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Principis SOLID
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#atributs-dinstancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributs d'instància
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constructor-__init__" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constructor __init__()
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validacio-basica-al-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validació bàsica al constructor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atributs-de-classe-i-dinstancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Atributs de classe i d'instància
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shadowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shadowing
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="instanciar-objectes">Instanciar objectes</h1>
+<p>Una classe es definix amb la paraula reservada <strong>class</strong>, seguida del nom de la classe. Per convenció, els noms s’escriuen en <em>PascalCase</em>.</p>
+<p>A continuació, definirem una classe buida anomenada <em>Alumne</em> i crearem dos instàncies <em>a1</em> i <em>a2</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">()</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="atributs-dinstancia">Atributs d'instància</h2>
+<p>Els <strong>atributs d’instància</strong> són variables que pertanyen a un objecte concret. En el següent exemple, creem els atributs <em>nom</em> i <em>edat</em> en l’objecte <em>a1</em>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">a1</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="s2">&quot;Carles&quot;</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">edat</span> <span class="o">=</span> <span class="mi">18</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">nom</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">edat</span><span class="p">)</span>
+</code></pre></div>
+<p>Ara bé, encara que podem crear atributs directament «sobre la marxa», el que es fa habitualment es definir-los d’una manera controlada mitjançant un mètode. </p>
+<p>Quan definim un mètode d’instància dins d’una classe, el primer paràmetre ha de ser <strong><code>self</code></strong>. Este paràmetre és una referència a l’objecte que executa el mètode i permet accedir als seus atributs i altres mètodes.</p>
+<p>Quan fem,
+<div class="highlight"><pre><span></span><code><span class="n">a1</span><span class="o">.</span><span class="n">saludar</span><span class="p">()</span>
+</code></pre></div></p>
+<p>el que realment estem fent internament és:
+<div class="highlight"><pre><span></span><code><span class="n">Alumne</span><span class="o">.</span><span class="n">saludar</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+</code></pre></div>
+<strong>EXEMPLE</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">assignar_dades</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">edat</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edat</span> <span class="o">=</span> <span class="n">edat</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">presentar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Em dic </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2"> i tinc </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">edat</span><span class="si">}</span><span class="s2"> anys.&quot;</span><span class="p">)</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">()</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">assignar_dades</span><span class="p">(</span><span class="s2">&quot;Carles&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">a1</span><span class="o">.</span><span class="n">presentar</span><span class="p">()</span>
+
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">()</span>
+<span class="n">a2</span><span class="o">.</span><span class="n">assignar_dades</span><span class="p">(</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+<span class="n">a2</span><span class="o">.</span><span class="n">presentar</span><span class="p">()</span>
+</code></pre></div>
+<p>D’esta manera,  quan fem:
+<div class="highlight"><pre><span></span><code><span class="n">a1</span><span class="o">.</span><span class="n">assignar_dades</span><span class="p">(</span><span class="s2">&quot;Carles&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>     <span class="c1"># self=a1, nom=&quot;Carles&quot;, edat=18</span>
+</code></pre></div></p>
+<p>De manera anàloga:
+<div class="highlight"><pre><span></span><code><span class="n">a2</span><span class="o">.</span><span class="n">assignar_dades</span><span class="p">(</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>      <span class="c1"># self=a2, nom=&quot;Maria&quot;, edat=19</span>
+</code></pre></div></p>
+<p><strong>IMPORTANT</strong><br>
+Si dins d’un mètode no usem <strong><code>self</code></strong>, estem creant una <em>variable local</em>, l’àmbit de la qual és només el propi mètode.</p>
+<h2 id="constructor-__init__">Constructor <code>__init__()</code></h2>
+<p>En l’exemple anterior hem creat el mètode <em>assignar_dades()</em> per a crear els atributs de la instància. Com que este procés quasi sempre es necessari, el procés de la creació dels atributs es fa sempre a través d’un <strong>mètode constructor</strong> específic anomenat <strong><code>__init__()</code></strong>. </p>
+<p>El mètode <strong><code>__init__(self)</code></strong> es caracteritza per:</p>
+<ul>
+<li>
+<p>S’executa automàticament quan es crea una nova instància de la classe.</p>
+</li>
+<li>
+<p>S’utilitza habitualment per inicialitzar els atributs d’instància de l’objecte.</p>
+</li>
+<li>
+<p>Retorna implícitament <code>None</code>, No pot retornar cap altre valor.</p>
+</li>
+<li>
+<p>És opcional i es pot ometre si la classe no necessita inicialitzar atributs d’instància.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">edat</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edat</span> <span class="o">=</span> <span class="n">edat</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Carles&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
+</code></pre></div>
+<p>En l’exemple, <em>nom</em> i <em>edat</em> són variables locals al mètode <code>__init__()</code>. En realitat, els noms d’estos paràmetres pot ser qualsevol, encara que és comú que coincidisquen amb els dels atributs.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parametre_1</span><span class="p">,</span> <span class="n">parametre_2</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span>  <span class="o">=</span> <span class="n">parametre_1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edat</span> <span class="o">=</span> <span class="n">parametre_2</span>
+</code></pre></div>
+<p>El mètode <code>__init__()</code> és un mètode normal i pot, per exemple, tindre paràmetres amb valors inicials per defecte:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">edat</span><span class="p">,</span> <span class="n">nota</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edat</span> <span class="o">=</span> <span class="n">edat</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nota</span> <span class="o">=</span> <span class="n">nota</span>
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Carles&quot;</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>          <span class="c1"># nota = 0</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mf">8.5</span><span class="p">)</span>      <span class="c1"># nota = 8.5</span>
+</code></pre></div>
+<h2 id="validacio-basica-al-constructor">Validació bàsica al constructor</h2>
+<p>El constructor és un lloc ideal per validar dades i assegurar-nos que l’objecte no naix en un estat incorrecte.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">edat</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">nom</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;El nom no pot estar buit.&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">edat</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;L&#39;edat no pot ser negativa.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edat</span> <span class="o">=</span> <span class="n">edat</span>
+</code></pre></div>
+<p><strong>EXEMPLE</strong><br>
+Objectes coherents i inicialitzats correctament.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">edat</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">nom</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;El nom no pot estar buit.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">edat</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;L&#39;edat no pot ser negativa.&quot;</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edat</span> <span class="o">=</span> <span class="n">edat</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">notes</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">afegir_nota</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nota</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">nota</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">nota</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;La nota ha d&#39;estar entre 0 i 10.&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nota</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">calcular_mitjana</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">notes</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">mostrar_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">mitjana</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">calcular_mitjana</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Alumne: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">nom</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">edat</span><span class="si">}</span><span class="s2"> anys) - Mitjana: </span><span class="si">{</span><span class="n">mitjana</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="atributs-de-classe-i-dinstancia">Atributs de classe i d'instància</h2>
+<p>En Python, els atributs d'una classe solen ser de dos tipus principals:</p>
+<ul>
+<li>
+<p><strong>Atributs d’instància</strong>:<br>
+    Els <em>atributs d’instància</em> pertanyen a cada objecte individualment. Són els que definim normalment dins del constructor <code>__init__()</code> amb <em>self</em>. Cada objecte té el seu estat independent.</p>
+</li>
+<li>
+<p><strong>Atributs de classe</strong>:<br>
+    Els <em>atributs de classe</em> pertanyen a la classe i són compartits per totes les instàncies. Es definixen directament dins de la classe, però fora d' <code>__init__()</code> i fora de qualsevol mètode.</p>
+<p>Els <em>atributs de classe</em> són útils quan tenim dades que són iguals per a totes les instàncies, o representen informació comuna del tipus d’objecte.</p>
+</li>
+</ul>
+<p><strong>EXEMPLE</strong><br>
+En el següent exemple, <em>centre</em> és un <strong>atribut de classe</strong> i és un valor comú i compartit per tots els alumnes. Per altra banda, l’<strong>atribut d'instància</strong> <em>nom</em> és particular de cada alumne.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="n">centre</span> <span class="o">=</span> <span class="s2">&quot;IES Example&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Carles&quot;</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Maria&quot;</span><span class="p">)</span>
+
+<span class="c1"># Accés a atribut d&#39;instància:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">nom</span><span class="p">)</span>           <span class="c1"># Carles</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="o">.</span><span class="n">nom</span><span class="p">)</span>           <span class="c1"># Maria</span>
+
+<span class="c1"># Accés a atribut de classe a través de l&#39;objecte.:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">centre</span><span class="p">)</span>        <span class="c1"># IES Ramón Cid</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="o">.</span><span class="n">centre</span><span class="p">)</span>        <span class="c1"># IES Ramón Cid</span>
+
+<span class="c1"># Accés a atribut de classe a través de la classe:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Alumne</span><span class="o">.</span><span class="n">center</span><span class="p">)</span>        <span class="c1"># IES Ramón Cid</span>
+</code></pre></div>
+<p><strong>EXEMPLE</strong>: Comptador d’instàncies<br>
+Fixem-nos que estem modificant el comptador amb <strong><em>Alumne.total_alumnes</em></strong> i no amb <strong><em>self.total_alumnes</em></strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Alumne</span><span class="p">:</span>
+    <span class="n">total_alumnes</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nom</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nom</span> <span class="o">=</span> <span class="n">nom</span>
+        <span class="n">Alumne</span><span class="o">.</span><span class="n">total_alumnes</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+<span class="n">a1</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Carles&quot;</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Maria&quot;</span><span class="p">)</span>
+<span class="n">a3</span> <span class="o">=</span> <span class="n">Alumne</span><span class="p">(</span><span class="s2">&quot;Aina&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Alumne</span><span class="o">.</span><span class="n">total_alumnes</span><span class="p">)</span>     <span class="c1"># 3</span>
+</code></pre></div>
+<h2 id="shadowing">Shadowing</h2>
+<p>En Python, podem llegir un atribut de classe tant des de la classe com des d’un objecte:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">Alumne</span><span class="o">.</span><span class="n">total_alumnes</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">total_alumnes</span><span class="p">)</span>
+</code></pre></div>
+<p>Si intentem modificar-lo des d’un objecte,</p>
+<div class="highlight"><pre><span></span><code><span class="n">a1</span><span class="o">.</span><span class="n">total_alumnes</span> <span class="o">=</span> <span class="mi">99</span>
+</code></pre></div>
+<p>no estem modificant l’atribut de classe, sinó que estem creant un nou atribut d’instància que “tapa” (fa ombra a) l’atribut de classe.</p>
+<div class="highlight"><pre><span></span><code><span class="n">a1</span><span class="o">.</span><span class="n">total_alumnes</span> <span class="o">=</span> <span class="mi">100</span>       <span class="c1"># crea un atribut d&#39;instància</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="o">.</span><span class="n">total_alumnes</span><span class="p">)</span>      <span class="c1"># 100 (atribut d&#39;instància)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a2</span><span class="o">.</span><span class="n">total_alumnes</span><span class="p">)</span>      <span class="c1"># 2   (atribut de classe)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Alumne</span><span class="o">.</span><span class="n">total_alumnes</span><span class="p">)</span>  <span class="c1"># 2   (atribut de classe)</span>
+</code></pre></div>
+<hr />
+<p><strong>ERRORS COMUNS</strong></p>
+<ul>
+<li>
+<p>Oblidar <strong>self</strong> a l’hora de crear els atributs d’instància</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1"># Atribut de classe</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>               <span class="c1"># Variable local a __init__() ja que no hem utilitzat self.n</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">Base</span><span class="p">()</span>
+<span class="n">Base</span><span class="o">.</span><span class="n">n</span>  <span class="c1"># 0  Accés a l&#39;atribut de classe n</span>
+<span class="n">b</span><span class="o">.</span><span class="n">n</span>     <span class="c1"># 0  No es pot accedir a n d&#39;init() ja que és una variable local, accedirem a l&#39;atribut de classe n</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>                   <span class="c1"># Atribut de classe</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>          <span class="c1"># Atribut d&#39;instància</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">Base</span><span class="p">()</span>
+<span class="n">Base</span><span class="o">.</span><span class="n">n</span>          <span class="c1"># 0     Accés a l&#39;tribut de classe n</span>
+<span class="n">b</span><span class="o">.</span><span class="n">n</span>             <span class="c1"># 2     Accés a l&#39;atribut d&#39;instància n</span>
+</code></pre></div>
+</li>
+<li>
+<p>Utilitzar una variable d'instància abans de crear-la:</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">9</span>                   <span class="c1"># Atribut de classe</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n</span><span class="p">)</span>       <span class="c1"># Com no hi ha atribut d&#39;instància n mira si hi ha atribut de classe n.</span>
+
+<span class="n">b</span> <span class="o">=</span> <span class="n">Base</span><span class="p">()</span>          <span class="c1"># 9</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># ERROR, intentem un self.n abans que existica.</span>
+                            <span class="c1"># AttributeError: &#39;Base&#39; object has no attribute &#39;n&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Base</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Base</span><span class="p">:</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">9</span>                   <span class="c1"># Atribut de classe</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># ERROR, intentem un self.n abans que existica.</span>
+
+<span class="n">b1</span> <span class="o">=</span> <span class="n">Base</span><span class="p">()</span>
+<span class="n">Base</span><span class="o">.</span><span class="n">n</span>          <span class="c1"># 9</span>
+<span class="n">b1</span><span class="o">.</span><span class="n">n</span>            <span class="c1"># 10</span>
+
+<span class="n">b2</span> <span class="o">=</span> <span class="n">Base</span><span class="p">()</span>
+<span class="n">Base</span><span class="o">.</span><span class="n">n</span>          <span class="c1"># 9</span>
+<span class="n">b2</span><span class="o">.</span><span class="n">n</span>            <span class="c1"># 10</span>
+</code></pre></div>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
